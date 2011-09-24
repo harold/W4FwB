@@ -1,0 +1,4 @@
+Ok, try this:
+
+bundle install --without-development
+bundle exec ruby app.rb -p 4567
