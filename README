@@ -1,4 +1,6 @@
-Ok, try this:
+Ok, you'll need Ruby 1.9.2 and the bundler gem.
+
+Then try this:
 
 bundle install --without-development
 bundle exec ruby app.rb -p 4567
