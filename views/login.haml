@@ -1,0 +1,16 @@
+%h2 Log In
+%form{action:"/login",method:"post"}
+	%table
+		%tr
+			%td Email:
+			%td
+				%input{type:"text",name:"email"}
+		%tr
+			%td Password:
+			%td
+				%input{type:"password",name:"password"}
+		%tr
+			%td
+			%td
+				%button{type:"submit"} Log In
+%a{href:"/signup"} Sign Up!

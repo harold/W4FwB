@@ -1,6 +1,7 @@
-Ok, you'll need Ruby 1.9.2 and the bundler gem.
+Ok, you'll need Ruby 1.9.2, sqlite binaries, and the bundler gem.
 
 Then try this:
 
 bundle install --without-development
+bundle exec sequel -E -m migrations sqlite://my.db
 bundle exec ruby app.rb -p 4567

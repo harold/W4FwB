@@ -22,4 +22,9 @@
 				%script(type="text/javascript" src="/js/#{js}")
 	%body{id:@action}
 		%h1#title= @title
-		#content= yield
+		- if flash[:notice]
+			%span#flash= flash[:notice]
+		#content
+			%div= yield
+			- if @account
+				%a{href:"/logout"} Log Out
