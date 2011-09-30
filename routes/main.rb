@@ -55,4 +55,15 @@ class MyApp < Sinatra::Application
 		set_cookie(COOKIE_NAME,'','')
 		redirect '/'
 	end
+
+	post '/word' do
+		word = params[:word]
+		if is_word? word then
+			flash[:notice] = "#{word} is a word"
+			redirect '/'
+		else
+			flash[:notice] = "#{word} is _NOT_ a word"
+			redirect '/'
+		end
+	end
 end

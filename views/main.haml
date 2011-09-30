@@ -1,2 +1,13 @@
 #nickname= @account[:nickname]
 %img{src:"http://www.gravatar.com/avatar/#{@email_md5}?d=retro"}
+
+%form{action:"/word",method:"post"}
+	%table
+		%tr
+			%td Word:
+			%td
+				%input{type:"text",name:"word",autofocus:true}
+		%tr
+			%td
+			%td
+				%button{type:"submit"} Submit
