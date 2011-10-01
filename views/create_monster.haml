@@ -1,0 +1,13 @@
+%h2 Create Monster
+%form{:action=>"/monster/create",method:"post"}
+	%table
+		%tr
+			%td Type:
+			%td
+				%select{name:"type"}
+					- @types.each do |t|
+						%option{value:t[:id]}= t[:name]
+		%tr
+			%td
+			%td
+				%button{type:"submit"} Create Monster

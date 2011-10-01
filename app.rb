@@ -9,10 +9,10 @@ class MyApp < Sinatra::Application
 	use Rack::Flash
 
 	configure :production do
-		set :haml, { :ugly=>true }
+		set :haml,        { ugly:true }
 		set :clean_trace, true
-		set :css_files, :blob
-		set :js_files,  :blob
+		set :css_files,   :blob
+		set :js_files,    :blob
 		MinifyResources.minify_all
 	end
 

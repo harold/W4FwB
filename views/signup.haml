@@ -1,24 +1,24 @@
 %h2 Sign Up
-%form{:action=>"signup",:method=>"post"}
+%form{action:"signup",method:"post"}
 	%table
 		%tr
 			%td Signup Code:
 			%td
-				%input{:type=>"text",:name=>"signupcode",autofocus:true}
+				%input{type:"text",name:"signupcode",autofocus:true}
 		%tr
 			%td Email:
 			%td
-				%input{:type=>"email",:name=>"email"}
+				%input{type:"email",name:"email"}
 		%tr
 			%td Password:
 			%td
-				%input{:type=>"password",:name=>"password"}
+				%input{type:"password",name:"password"}
 		%tr
 			%td Nickname:
 			%td
-				%input{:type=>"text",:name=>"nickname"}
+				%input{type:"text",name:"nickname"}
 		%tr
 			%td
 			%td
-				%button{:type=>"submit"} Sign Up
+				%button{type:"submit"} Sign Up
 %a{href:"/"} Log In

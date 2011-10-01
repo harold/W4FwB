@@ -1,13 +1,35 @@
-#nickname= @account[:nickname]
-%img{src:"http://www.gravatar.com/avatar/#{@email_md5}?d=retro"}
+%h2 Account
+%section
+	#nickname= @account[:nickname]
+	%img{src:"http://www.gravatar.com/avatar/#{@email_md5}?d=retro"}
 
-%form{action:"/word",method:"post"}
-	%table
-		%tr
-			%td Word:
-			%td
-				%input{type:"text",name:"word",autofocus:true}
-		%tr
-			%td
-			%td
-				%button{type:"submit"} Submit
+- if not @monsters.empty?
+	%h2 Monsters
+	%section
+		%table
+			%tr
+				%th Type
+				%th Image
+				%th Level
+				%th Hp
+			- @monsters.each do |m|
+				%tr
+					%td= m.type[:name]
+					%td
+						%img{src:"/images/#{m.type[:name].downcase}.png"}
+					%td= m.level
+					%td= m.hp
+
+%h2 Do Stuff
+%section
+	%form{action:"/word",method:"post"}
+		%table
+			%tr
+				%td Word:
+				%td
+					%input{type:"text",name:"word",autofocus:true}
+			%tr
+				%td
+				%td
+					%button{type:"submit"} Submit
+	%a{href:"/monster/create"} Create Monster

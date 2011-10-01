@@ -12,6 +12,14 @@ Sequel.migration do
 			String :name
 		end
 		%w{ Fire Ice Grass Electric Water }.each { |t| self[:types] << { name: t } }
+
+		create_table :monsters do
+			primary_key :id
+			foreign_key :type_id, :types
+			foreign_key :account_id, :accounts
+			Integer :level
+			Integer :hp
+		end
 	end
 
 	down do

@@ -4,6 +4,7 @@ class MyApp < Sinatra::Application
 	get "/" do
 		@title = "Welcome to W4FwB"
 		@email_md5 = Digest::MD5.hexdigest(@account[:email])
+		@monsters = @account.monsters
 		haml :main
 	end
 
