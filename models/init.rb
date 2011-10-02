@@ -7,3 +7,4 @@ DB = Sequel.connect( ENV['DATABASE_URL'] || 'sqlite://my.db' )
 require_relative 'account'
 require_relative 'type'
 require_relative 'monster'
+require_relative 'letter'

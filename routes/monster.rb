@@ -6,14 +6,19 @@ class MyApp < Sinatra::Application
 	end
 
 	post "/monster/create" do
-		puts "==="
-		puts params[:type]
-		puts @account.pk
-		puts "==="
-		Monster.create( type_id: params[:type].to_i,
-		                account_id: @account.pk,
-		                level: 1,
-		                hp: 10 )
+		DB.transaction do
+			m = Monster.create( type_id: params[:type].to_i,
+			                    account_id: @account.pk,
+			                    level: 1,
+			                    hp: 10 )
+			tops = [ 4, 8, 12, 16, 20, 24, 26, 26 ]
+			tops.each_with_index do |top, i|
+				Letter.create( monster_id:m.pk,
+				               type_id:i==0 ? m.type.pk : nil,
+				               letter:get_letter( top ),
+				               level:i==tops.length-1 ? 2 : 1 )
+			end
+		end
 		redirect "/"
 	end
 end

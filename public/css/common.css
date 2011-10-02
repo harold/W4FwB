@@ -1,6 +1,27 @@
-html, body { background:#eee; margin:0; padding:0; color:#000 }
+html, body { background:#ddd; margin:0; padding:0; color:#000 }
 h1,h2,h3,h4,h5,h6 { font-family:sans-serif; border-bottom:1px solid #aaa; margin:1em 0 0.5em 0 }
 h1#title { background:#333; margin-top:0; color:#ccc; padding:0.1em 0.5em; font-size:105% }
 #content { margin:1em 2em }
 #flash { border-radius:4px; background:#f86; padding:0.5em; margin:0.5em; display:inline-block }
 section { margin-left:1em }
+
+.letter {
+	font-size:150%;
+	display:inline-block;
+	border-radius:3px;
+	border:solid 1px #333;
+	background:#eee;
+	width:1.5em;
+	height:1.5em;
+	line-height:1.5em;
+	text-align:center;
+	text-shadow:#aaa 1px 1px 2px;
+}
+
+div.letter.fire     {background:#f88;}
+div.letter.ice      {background:#8ff;}
+div.letter.grass    {background:#8f8;}
+div.letter.electric {background:#ff8;}
+div.letter.water    {background:#88f;}
+
+.letter sub {font-size:50%;}

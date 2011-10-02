@@ -12,6 +12,7 @@
 				%th Image
 				%th Level
 				%th Hp
+				%th Letters
 			- @monsters.each do |m|
 				%tr
 					%td= m.type[:name]
@@ -19,6 +20,9 @@
 						%img{src:"/images/#{m.type[:name].downcase}.png"}
 					%td= m.level
 					%td= m.hp
+					%td
+						- m.letters.each do |l|
+							#{partial :letter_partial, l:l}
 
 %h2 Do Stuff
 %section

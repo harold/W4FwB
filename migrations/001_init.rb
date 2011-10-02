@@ -20,9 +20,19 @@ Sequel.migration do
 			Integer :level
 			Integer :hp
 		end
+
+		create_table :letters do
+			primary_key :id
+			foreign_key :monster_id
+			foreign_key :type_id, null:true
+			String :letter
+			Integer :level
+		end
 	end
 
 	down do
+		drop_table :letters
+		drop_table :monsters
 		drop_table :types
 		drop_table :accounts
 	end
